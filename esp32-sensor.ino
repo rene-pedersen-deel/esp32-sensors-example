@@ -60,6 +60,14 @@ void loop() {
 }
 
 
+class myClass {
+    private:
+        float currentVal = 1;
+        float newVal = 1;
+        ulong lastRead = millis();
+};
+
+
 const int lightSensorPin = 34;
 float currentLightLevel = 1;
 unsigned long lastReadLightLevel = 0;
