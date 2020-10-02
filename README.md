@@ -9,4 +9,4 @@ This file must contain the following definitions (replace all the xxxx with your
  
 #define MQTT_CLIENT_NAME "xxxx"                // MQTT client Name, please enter your own 8-12   alphanumeric character ASCII string;  
 #define MQTT_CLIENT_PASSWORD "xxxx"            // MQTT client Name, please enter your own 8-12   alphanumeric character ASCII string;
-char mqttBroker[] = "192.168.1.70";            // Address of the MQTT broker  
+char mqttBroker[] = "x.x.x.x";            // Address of the MQTT broker  

@@ -118,7 +118,7 @@ void measureTempHum() {
     }
 
     float temperatureChange = abs( temperature - currentTemperature ) / currentTemperature;
-    if ( temperatureChange >= 0.01 || millis() - lastReadTempHum > 15*60*1000 ) {
+    if ( temperatureChange >= 0.01 || millis() - lastReadTempHum > 1*60*1000 ) {
         currentTemperature = temperature;
         lastReadTempHum = millis();
         Serial.print("Temp: ");
@@ -198,7 +198,7 @@ void reconnect() {
 
         // Attemp to connect
 
-        if (client.connect("esp32-01", "kong", "kong"))
+        if (client.connect("esp32-02", "kong", "kong"))
         {
             Serial.println("Connected-------------------------------------------");
         }
