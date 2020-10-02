@@ -91,7 +91,7 @@ void readLightLevel() {
         Serial.println(newLightLevel);
         char lightString[8];
         dtostrf(newLightLevel, 1, 2, lightString);
-        client.publish("esp32/light", lightString);
+        client.publish("sensor/light/hallway", lightString);
     }
 }
 
@@ -127,7 +127,7 @@ void measureTempHum() {
 
         char tempString[8];
         dtostrf(temperature, 1, 2, tempString);
-        client.publish("esp32/temp", tempString);
+        client.publish("sensor/temp/hallway", tempString);
     }
 
     float humidityChange = abs( humidity - currentHumidity ) / currentHumidity;
@@ -140,7 +140,7 @@ void measureTempHum() {
 
         char humString[8];
         dtostrf(humidity, 1, 2, humString);
-        client.publish("esp32/hum", humString);
+        client.publish("sensor/hum/hallway", humString);
     }
 }
 
@@ -165,7 +165,7 @@ void detectMotion() {
         // Change the motion state to true (motion detected):
         Serial.println("Motion detected!");
         currentMotionState = true;
-        client.publish("esp32/motion", "on");
+        client.publish("sensor/motion/hallway", "on");
     }
     // If no motion is detected (pirPin = LOW), do the following:
     else {
@@ -173,7 +173,7 @@ void detectMotion() {
         // Change the motion state to false (no motion):
         Serial.println("Motion ended!");
         currentMotionState = false;
-        client.publish("esp32/motion", "off");
+        client.publish("sensor/motion/hallway", "off");
     }
 }
 
