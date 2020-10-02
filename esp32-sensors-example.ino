@@ -1,4 +1,4 @@
-  //Libraries
+//Libraries
 #include <DHT.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
@@ -64,7 +64,7 @@ class myClass {
     private:
         float currentVal = 1;
         float newVal = 1;
-        ulong lastRead = millis();
+        unsigned long lastRead = millis();
 };
 
 
